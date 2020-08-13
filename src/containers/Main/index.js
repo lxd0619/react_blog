@@ -1,122 +1,51 @@
-import React, { Component } from "react";
+/**
+ * container
+ */
+import React, { Suspense, lazy } from "react";
 
-// import Front_end from "../Front_end";
-// import Back_end from "../Back_end";
-// const MainRouter = () => (
-//     <HashRouter>
-//       <Switch>
-//         <Route path="/frontend" component={Front_end} />
-//         <Route path="/backend" component={Back_end} />
-//         <Redirect to="/frontend" />
-//       </Switch>
-//     </HashRouter>
-//   );
-
-//   export default MainRouter;
-
-import { Menu, Switch, Divider, Button } from "antd";
 import {
-  MailOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  CalendarOutlined,
-  AppstoreOutlined,
-  SettingOutlined,
-  LinkOutlined,
-} from "@ant-design/icons";
+  BrowserRouter as Router,
+  HashRouter,
+  Route,
+  NavLink,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
-const { SubMenu } = Menu;
+import Home from "../Home";
+import Frontend from "../Front_end";
+import Backend from "../Back_end";
 
-class Main extends React.Component {
-  state = {
-    mode: "inline",
-    theme: "light",
-    collapsed: false,
-  };
-
-  changeMode = (value) => {
-    this.setState({
-      mode: value ? "vertical" : "inline",
-    });
-  };
-
-  changeTheme = (value) => {
-    this.setState({
-      theme: value ? "dark" : "light",
-    });
-  };
-
-  toggleCollapsed = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  };
+class AppRouter extends React.Component {
+  state = {};
 
   render() {
+    const liStyle = {
+      float: "left",
+      marginRight: "20px",
+    };
     return (
-      <>
-        <Switch onChange={this.changeMode} /> Change Mode
-        <Divider type="vertical" />
-        <Switch onChange={this.changeTheme} /> Change Style
-        <Button
-          type="primary"
-          onClick={this.toggleCollapsed}
-          style={{ marginBottom: 16 }}
-        >
-          {React.createElement(
-            this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined
-          )}
-        </Button>
-        <br />
-        <br />
-        <Menu
-          defaultSelectedKeys={["1"]}
-          defaultOpenKeys={["sub1"]}
-          mode={this.state.mode}
-          theme={this.state.theme}
-          inlineCollapsed={this.state.collapsed}
-        >
-          <Menu.Item key="1" icon={<MailOutlined />}>
-            Navigation One
-          </Menu.Item>
-          <Menu.Item key="2" icon={<CalendarOutlined />}>
-            Navigation Two
-          </Menu.Item>
-          <SubMenu
-            key="sub1"
-            icon={<AppstoreOutlined />}
-            title="Navigation Two"
-          >
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
-            <SubMenu key="sub1-2" title="Submenu">
-              <Menu.Item key="5">Option 5</Menu.Item>
-              <Menu.Item key="6">Option 6</Menu.Item>
-            </SubMenu>
-          </SubMenu>
-          <SubMenu
-            key="sub2"
-            icon={<SettingOutlined />}
-            title="Navigation Three"
-          >
-            <Menu.Item key="7">Option 7</Menu.Item>
-            <Menu.Item key="8">Option 8</Menu.Item>
-            <Menu.Item key="9">Option 9</Menu.Item>
-            <Menu.Item key="10">Option 10</Menu.Item>
-          </SubMenu>
-          <Menu.Item key="link" icon={<LinkOutlined />}>
-            <a
-              href="https://ant.design"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Ant Design
-            </a>
-          </Menu.Item>
-        </Menu>
-      </>
+      <HashRouter>
+        <ul style={{ listStyle: "none" }}>
+          <li style={liStyle}>
+            <NavLink to="/">首页</NavLink>
+          </li>
+          <li style={liStyle}>
+            <NavLink to="/frontend">前端</NavLink>
+          </li>
+          <li style={liStyle}>
+            <NavLink to="backend">后端</NavLink>
+          </li>
+        </ul>
+        <div style={{ clear: "both" }}>
+          <Route path="/" component={Home} exact />
+          <Route path="/frontend" component={Frontend} />
+          <Route path="/backend" component={Backend} />
+          <Redirect to="/" />
+        </div>
+      </HashRouter>
     );
   }
 }
 
-export default Main;
+export default AppRouter;
