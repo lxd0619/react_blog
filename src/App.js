@@ -3,11 +3,7 @@ import Router from "./containers/Main";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 function App() {
-  return (
-    <>
-      <Router />
-    </>
-  );
+  return <Router />;
 }
 
 export default App;
