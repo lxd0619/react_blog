@@ -29,7 +29,7 @@ class AppRouter extends React.Component {
         <Layout>
           <Header className="header">
             <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
               <Menu.Item key="1">
                 <NavLink to="/">首页</NavLink>
               </Menu.Item>
@@ -89,7 +89,7 @@ class AppRouter extends React.Component {
                 style={{
                   padding: 24,
                   margin: 0,
-                  minHeight: 280,
+                  minHeight: 500,
                 }}
               >
                 <Route path="/" component={Home} exact />
