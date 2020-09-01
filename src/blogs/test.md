@@ -20,7 +20,7 @@ const Dome = () => (
 );
 ```
 
-controlled usage
+<!-- controlled usage
 
 ```jsx
 import MarkdownEditor from "@uiw/react-markdown-editor";
@@ -73,4 +73,4 @@ npm run doc
 
 ## License
 
-[MIT © Kenny Wong](./LICENSE)
+[MIT © Kenny Wong](./LICENSE) -->

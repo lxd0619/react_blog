@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { DatePicker, Badge } from "antd";
-const { RangePicker } = DatePicker;
+import cat from "Image/cat.jpeg";
 
 export class Home extends Component {
   state = {};
@@ -11,7 +11,6 @@ export class Home extends Component {
     return (
       <>
         <div>Home</div>
-        <RangePicker />
       </>
     );
   }

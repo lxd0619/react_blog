@@ -32,7 +32,7 @@ class App extends Component {
     const { locale } = this.state;
     return (
       <div>
-        <div className="change-locale">
+        {/* <div className="change-locale">
           <span style={{ marginRight: 16 }}>Change locale of components: </span>
           <Radio.Group value={locale} onChange={this.changeLocale}>
             <Radio.Button key="en" value={enUS}>
@@ -42,7 +42,7 @@ class App extends Component {
               中文
             </Radio.Button>
           </Radio.Group>
-        </div>
+        </div> */}
         <ConfigProvider locale={locale}>
           <Main
             key={

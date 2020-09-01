@@ -1,45 +1,35 @@
 import React, { Component } from "react";
+import Article from "Components/Article";
 
-import { Card } from "antd";
-import ReactMarkdown from "react-markdown";
-import CodeBloack from "../../utils/CodeBloack";
-import HeadingBlock from "../../utils/HeadingBlock";
-import AppMarkdown from "./test.md";
-import Editor from "for-editor";
+const context = require.context("@/blogs", true, /\.md$/);
+const arr = context.keys();
+console.log(context.id);
+//匹配结果./js sync recursive \.js$
+//参数分为三段，一、index.js当前路径，二、是否递归，三、正则匹配规则
+//context 关闭递归查找recursive 会变成 sync
+console.log("arr", context.resolve(arr[0]));
+//第一个js文件的相对路径./js/b.js
+console.log("keys()", context.keys());
+//所有成功匹配的js文件数组["./a.js", "./index.js", "./reducer/c.js", "./reducer/d.js"]
+// const res = context.keys().map(context);
+const res = context.keys().map((item) => context(item));
+//上面两种写法等同
+console.log("res", res);
 
 export class FrontEnd extends Component {
   state = {
     markdown: "",
   };
 
-  componentWillMount() {
-    fetch(AppMarkdown)
-      .then((res) => res.text())
-      .then((text) => this.setState({ markdown: text }));
-  }
+  componentWillMount() {}
 
   render() {
-    const { markdown, value } = this.state;
+    const {} = this.state;
     return (
       <div>
-        <Card bordered={false}>
-          <ReactMarkdown
-            className="markdown-body"
-            source={markdown}
-            escapeHtml={false}
-            renderers={{
-              code: CodeBloack,
-              heading: HeadingBlock,
-            }}
-          />
-        </Card>
-        <Editor
-          preview
-          value={value}
-          onChange={(value) => {
-            this.setState({ value });
-          }}
-        />
+        {res.map((item, i) => {
+          return <Article key={i} md={item} />;
+        })}
       </div>
     );
   }

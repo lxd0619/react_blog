@@ -9,6 +9,7 @@ import {
 import Home from "../Home";
 import Frontend from "../Front_end";
 import Backend from "../Back_end";
+import Edit from "../Edit";
 import { Layout, Menu, Breadcrumb, Dropdown } from "antd";
 import {
   UserOutlined,
@@ -55,6 +56,16 @@ class AppRouter extends React.Component {
               后端
             </span>
           </Menu.Item>
+          <Menu.Item key="4">
+            <span
+              to="/edit"
+              onClick={() => {
+                this.refs.edit.click();
+              }}
+            >
+              编辑
+            </span>
+          </Menu.Item>
         </Menu>
       </Router>
     );
@@ -78,6 +89,11 @@ class AppRouter extends React.Component {
                 <Menu.Item key="3">
                   <NavLink to="/backend" ref="bcd">
                     后端
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="4">
+                  <NavLink to="/edit" ref="edit">
+                    编辑
                   </NavLink>
                 </Menu.Item>
               </Menu>
@@ -140,6 +156,7 @@ class AppRouter extends React.Component {
                   <Route path="/" component={Home} exact />
                   <Route path="/frontend" component={Frontend} exact />
                   <Route path="/backend" component={Backend} exact />
+                  <Route path="/edit" component={Edit} exact />
                   <Redirect to="/" />
                 </Content>
               </Layout>
