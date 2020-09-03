@@ -10,15 +10,11 @@ import Home from "../Home";
 import Frontend from "../Front_end";
 import Backend from "../Back_end";
 import Edit from "../Edit";
-import { Layout, Menu, Breadcrumb, Dropdown } from "antd";
-import {
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-} from "@ant-design/icons";
+import { Layout, Breadcrumb, Dropdown, Menu, Switch } from "antd";
+import SiderMenu from "./components/SiderMenu";
 
-const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
+const { Item } = Menu;
 
 class AppRouter extends React.Component {
   state = {};
@@ -27,7 +23,7 @@ class AppRouter extends React.Component {
     const menu = (
       <Router>
         <Menu>
-          <Menu.Item key="1">
+          <Item key="1">
             <span
               to="/backend"
               onClick={() => {
@@ -36,8 +32,8 @@ class AppRouter extends React.Component {
             >
               首页
             </span>
-          </Menu.Item>
-          <Menu.Item key="2">
+          </Item>
+          <Item key="2">
             <span
               onClick={() => {
                 this.refs.frd.click();
@@ -45,27 +41,25 @@ class AppRouter extends React.Component {
             >
               前端
             </span>
-          </Menu.Item>
-          <Menu.Item key="3">
+          </Item>
+          <Item key="3">
             <span
-              to="/backend"
               onClick={() => {
                 this.refs.bcd.click();
               }}
             >
               后端
             </span>
-          </Menu.Item>
-          <Menu.Item key="4">
+          </Item>
+          <Item key="4">
             <span
-              to="/edit"
               onClick={() => {
                 this.refs.edit.click();
               }}
             >
               编辑
             </span>
-          </Menu.Item>
+          </Item>
         </Menu>
       </Router>
     );
@@ -76,26 +70,33 @@ class AppRouter extends React.Component {
             <Header className="header">
               <div className="logo" />
               <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
-                <Menu.Item key="1">
+                <Item key="1">
                   <NavLink to="/" ref="home">
                     首页
                   </NavLink>
-                </Menu.Item>
-                <Menu.Item key="2">
+                </Item>
+                <Item key="2">
                   <NavLink to="/frontend" ref="frd">
                     前端
                   </NavLink>
-                </Menu.Item>
-                <Menu.Item key="3">
+                </Item>
+                <Item key="3">
                   <NavLink to="/backend" ref="bcd">
                     后端
                   </NavLink>
-                </Menu.Item>
-                <Menu.Item key="4">
+                </Item>
+                <Item key="4">
                   <NavLink to="/edit" ref="edit">
                     编辑
                   </NavLink>
-                </Menu.Item>
+                </Item>
+                <Item key="5">
+                  <Switch
+                    checkedChildren="开启"
+                    unCheckedChildren="关闭"
+                    defaultChecked
+                  />
+                </Item>
               </Menu>
             </Header>
             <Layout>
@@ -105,39 +106,7 @@ class AppRouter extends React.Component {
                 width={200}
                 className="site-layout-background"
               >
-                <Menu
-                  mode="inline"
-                  defaultSelectedKeys={["1"]}
-                  defaultOpenKeys={["sub1"]}
-                  style={{ height: "100%", borderRight: 0 }}
-                >
-                  <SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
-                    <Menu.Item key="1">option1</Menu.Item>
-                    <Menu.Item key="2">option2</Menu.Item>
-                    <Menu.Item key="3">option3</Menu.Item>
-                    <Menu.Item key="4">option4</Menu.Item>
-                  </SubMenu>
-                  <SubMenu
-                    key="sub2"
-                    icon={<LaptopOutlined />}
-                    title="subnav 2"
-                  >
-                    <Menu.Item key="5">option5</Menu.Item>
-                    <Menu.Item key="6">option6</Menu.Item>
-                    <Menu.Item key="7">option7</Menu.Item>
-                    <Menu.Item key="8">option8</Menu.Item>
-                  </SubMenu>
-                  <SubMenu
-                    key="sub3"
-                    icon={<NotificationOutlined />}
-                    title="subnav 3"
-                  >
-                    <Menu.Item key="9">option9</Menu.Item>
-                    <Menu.Item key="10">option10</Menu.Item>
-                    <Menu.Item key="11">option11</Menu.Item>
-                    <Menu.Item key="12">option12</Menu.Item>
-                  </SubMenu>
-                </Menu>
+                <SiderMenu />
               </Sider>
               <Layout style={{ padding: "0 24px 24px" }}>
                 <Breadcrumb style={{ margin: "16px 0" }}>

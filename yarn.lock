@@ -11479,6 +11479,11 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
+web-fs@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/web-fs/download/web-fs-2.1.0.tgz#206d0c43ee5cd75a7f86da7f22b7f6869eea7705"
+  integrity sha1-IG0MQ+5c11p/htp/Irf2hp7qdwU=
+
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.npm.taobao.org/webidl-conversions/download/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"

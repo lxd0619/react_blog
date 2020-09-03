@@ -12,7 +12,6 @@ export class Articles extends Component {
   }
 
   async componentDidMount() {
-    console.log(5444, this.props);
     fetch(this.props.md)
       .then((res) => res.text())
       .then((text) => this.setState({ markdown: text }));
