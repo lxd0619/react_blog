@@ -11,7 +11,6 @@ import Frontend from "../Front_end";
 import Backend from "../Back_end";
 import Edit from "../Edit";
 import { Layout, Breadcrumb, Dropdown, Menu, Switch } from "antd";
-import SiderMenu from "./components/SiderMenu";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
@@ -65,51 +64,36 @@ class AppRouter extends React.Component {
     );
     return (
       <HashRouter>
-        <Dropdown overlay={menu} trigger={["contextMenu"]}>
-          <Layout>
-            <Header className="header">
-              <div className="logo" />
-              <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
-                <Item key="1">
-                  <NavLink to="/" ref="home">
-                    首页
-                  </NavLink>
-                </Item>
-                <Item key="2">
-                  <NavLink to="/frontend" ref="frd">
-                    前端
-                  </NavLink>
-                </Item>
-                <Item key="3">
-                  <NavLink to="/backend" ref="bcd">
-                    后端
-                  </NavLink>
-                </Item>
-                <Item key="4">
-                  <NavLink to="/edit" ref="edit">
-                    编辑
-                  </NavLink>
-                </Item>
-                <Item key="5">
-                  <Switch
-                    checkedChildren="开启"
-                    unCheckedChildren="关闭"
-                    defaultChecked
-                  />
-                </Item>
-              </Menu>
-            </Header>
-            <Layout>
-              <Sider
-                breakpoint="lg"
-                collapsedWidth="0"
-                width={200}
-                className="site-layout-background"
-              >
-                <SiderMenu />
-              </Sider>
-              <Layout style={{ padding: "0 24px 24px" }}>
-                <Breadcrumb style={{ margin: "16px 0" }}>
+        {/* <Dropdown overlay={menu} trigger={["contextMenu"]}> */}
+        {/* <Layout> */}
+        {/* <Header className="header"> */}
+        <div className="logo" />
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+          <Item key="1">
+            <NavLink to="/" ref="home">
+              首页
+            </NavLink>
+          </Item>
+          <Item key="2">
+            <NavLink to="/frontend" ref="frd">
+              前端
+            </NavLink>
+          </Item>
+          <Item key="3">
+            <NavLink to="/backend" ref="bcd">
+              后端
+            </NavLink>
+          </Item>
+          <Item key="4">
+            <NavLink to="/edit" ref="edit">
+              编辑
+            </NavLink>
+          </Item>
+        </Menu>
+        {/* </Header> */}
+        {/* <Layout> */}
+        {/* <Layout style={{ padding: "0 24px 24px" }}> */}
+        {/* <Breadcrumb style={{ margin: "16px 0" }}>
                   <Breadcrumb.Item>Home</Breadcrumb.Item>
                   <Breadcrumb.Item>List</Breadcrumb.Item>
                   <Breadcrumb.Item>App</Breadcrumb.Item>
@@ -121,17 +105,17 @@ class AppRouter extends React.Component {
                     margin: 0,
                     minHeight: 500,
                   }}
-                >
-                  <Route path="/" component={Home} exact />
-                  <Route path="/frontend" component={Frontend} exact />
-                  <Route path="/backend" component={Backend} exact />
-                  <Route path="/edit" component={Edit} exact />
-                  <Redirect to="/" />
-                </Content>
-              </Layout>
-            </Layout>
-          </Layout>
-        </Dropdown>
+                > */}
+        <Route path="/" component={Home} exact />
+        <Route path="/frontend" component={Frontend} exact />
+        <Route path="/backend" component={Backend} exact />
+        <Route path="/edit" component={Edit} exact />
+        <Redirect to="/" />
+        {/* </Content> */}
+        {/* </Layout> */}
+        {/* </Layout> */}
+        {/* </Layout> */}
+        {/* </Dropdown> */}
       </HashRouter>
     );
   }
