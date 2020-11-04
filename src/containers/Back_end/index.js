@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "antd";
+import Palette from "Components/Palette";
 
 export class backend extends Component {
   render() {
@@ -14,6 +15,10 @@ export class backend extends Component {
         >
           go
         </Button>
+        <p>
+          调色盘
+          <Palette />
+        </p>
       </>
     );
   }

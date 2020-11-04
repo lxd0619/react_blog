@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { DatePicker, Badge } from "antd";
 import cat from "Image/cat.jpeg";
+import Resizable from "Components/Resizable";
 
 export class Home extends Component {
   state = {};
@@ -11,6 +12,7 @@ export class Home extends Component {
     return (
       <>
         <div>Home</div>
+        <Resizable />
       </>
     );
   }
