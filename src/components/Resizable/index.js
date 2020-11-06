@@ -9,7 +9,7 @@ export class Resizable extends Component {
         <ResizableBox
           className={Style.box}
           width={200}
-          height={300}
+          height={100}
           axis="x"
           handle={
             <span
