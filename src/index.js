@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 // import store from './store';
-import { AppContainer } from "react-hot-loader";
+import { AppContainer, setConfig } from "react-hot-loader";
 // import { Provider } from "react-redux";
 
 // const eruda = require("eruda");
@@ -18,6 +18,10 @@ import { AppContainer } from "react-hot-loader";
 // import VConsole from "vconsole";
 // let vConsole = new VConsole();
 
+// 禁用警告
+setConfig({
+  showReactDomPatchNotification: false,
+});
 //热更新实现
 const render = (Component) => {
   ReactDOM.render(

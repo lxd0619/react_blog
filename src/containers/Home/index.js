@@ -6,8 +6,6 @@ export class Home extends Component {
   componentDidMount() {}
 
   render() {
-    const {} = this.state;
-
     return (
       <>
         <div>Home</div>

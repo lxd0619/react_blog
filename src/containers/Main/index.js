@@ -4,7 +4,7 @@ import {
   HashRouter,
   Route,
   NavLink,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import Home from "../Home";
 import Article from "../Article";

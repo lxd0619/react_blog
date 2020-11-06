@@ -20,12 +20,12 @@ export class FrontEnd extends Component {
     console.log("res", res);
 
     let list = [];
-    context.keys().map((item) => {
+    context.keys().map((item) =>
       list.push({
         title: item.split(".")[1].split("/").slice(-1),
         path: context(item),
-      });
-    });
+      })
+    );
     this.setState({ data: list });
   }
 
