@@ -1,74 +1,80 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   HashRouter,
   Route,
   NavLink,
   Redirect,
 } from "react-router-dom";
 import Home from "../Home";
+import Article from "../Article";
 import Frontend from "../Front_end";
 import Backend from "../Back_end";
 import Edit from "../Edit";
-import { Layout, Breadcrumb, Dropdown, Menu, Switch } from "antd";
+// import { Layout, Breadcrumb, Dropdown, Menu, Switch } from "antd";
+import { Menu } from "antd";
 
-const { Header, Content, Footer, Sider } = Layout;
+// const { Header, Content, Footer, Sider } = Layout;
 const { Item } = Menu;
 
 class AppRouter extends React.Component {
   state = {};
 
   render() {
-    const menu = (
-      <Router>
-        <Menu>
-          <Item key="1">
-            <span
-              to="/backend"
-              onClick={() => {
-                this.refs.home.click();
-              }}
-            >
-              首页
-            </span>
-          </Item>
-          <Item key="2">
-            <span
-              onClick={() => {
-                this.refs.frd.click();
-              }}
-            >
-              前端
-            </span>
-          </Item>
-          <Item key="3">
-            <span
-              onClick={() => {
-                this.refs.bcd.click();
-              }}
-            >
-              后端
-            </span>
-          </Item>
-          <Item key="4">
-            <span
-              onClick={() => {
-                this.refs.edit.click();
-              }}
-            >
-              编辑
-            </span>
-          </Item>
-        </Menu>
-      </Router>
-    );
+    // const menu = (
+    //   <Router>
+    //     <Menu>
+    //       <Item key="1">
+    //         <span
+    //           to="/backend"
+    //           onClick={() => {
+    //             this.refs.home.click();
+    //           }}
+    //         >
+    //           首页
+    //         </span>
+    //       </Item>
+    //       <Item key="2">
+    //         <span
+    //           onClick={() => {
+    //             this.refs.frd.click();
+    //           }}
+    //         >
+    //           前端
+    //         </span>
+    //       </Item>
+    //       <Item key="3">
+    //         <span
+    //           onClick={() => {
+    //             this.refs.bcd.click();
+    //           }}
+    //         >
+    //           后端
+    //         </span>
+    //       </Item>
+    //       <Item key="4">
+    //         <span
+    //           onClick={() => {
+    //             this.refs.edit.click();
+    //           }}
+    //         >
+    //           编辑
+    //         </span>
+    //       </Item>
+    //     </Menu>
+    //   </Router>
+    // );
     return (
       <HashRouter>
         {/* <Dropdown overlay={menu} trigger={["contextMenu"]}> */}
         {/* <Layout> */}
         {/* <Header className="header"> */}
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+        <Menu
+          theme="light"
+          mode="horizontal"
+          // defaultSelectedKeys={["1"]}
+        >
           <Item key="1">
             <NavLink to="/" ref="home">
               首页
@@ -107,10 +113,12 @@ class AppRouter extends React.Component {
                   }}
                 > */}
         <Route path="/" component={Home} exact />
+        <Route path="/article" component={Article} exact />
         <Route path="/frontend" component={Frontend} exact />
         <Route path="/backend" component={Backend} exact />
         <Route path="/edit" component={Edit} exact />
-        <Redirect to="/" />
+        {/* 刷新跳首页 */}
+        {/* <Redirect to="/" /> */}
         {/* </Content> */}
         {/* </Layout> */}
         {/* </Layout> */}

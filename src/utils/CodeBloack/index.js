@@ -7,8 +7,8 @@ import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";
 import {
   jsx,
   javascript,
-  sass,
-  scss,
+  // sass,
+  // scss,
 } from "react-syntax-highlighter/dist/esm/languages/prism";
 
 class CodeBlock extends PureComponent {

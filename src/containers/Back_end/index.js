@@ -15,10 +15,8 @@ export class backend extends Component {
         >
           go
         </Button>
-        <p>
-          调色盘
-          <Palette />
-        </p>
+        调色盘
+        <Palette />
       </>
     );
   }

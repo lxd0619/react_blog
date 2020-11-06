@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Main from "./containers/Main";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import { ConfigProvider, Radio } from "antd";
+import { ConfigProvider } from "antd";
 
 import enUS from "antd/es/locale/en_US";
-import zhCN from "antd/es/locale/zh_CN";
+// import zhCN from "antd/es/locale/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
 

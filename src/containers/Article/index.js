@@ -11,18 +11,14 @@ export class Articles extends Component {
     this.state = {};
   }
 
-  async componentDidMount() {
-    fetch(this.props.md)
-      .then((res) => res.text())
-      .then((text) => this.setState({ markdown: text }));
-  }
-
-  componentWillReceiveProps() {
-    console.log("props", this.props);
+  componentDidMount() {
+    this.props.location.query &&
+      fetch(this.props.location.query.path)
+        .then((res) => res.text())
+        .then((text) => this.setState({ markdown: text }));
   }
 
   render() {
-    const { md } = this.props;
     const { markdown } = this.state;
     return (
       <div>
