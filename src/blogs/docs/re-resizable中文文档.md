@@ -1,4 +1,4 @@
-# [re-resizable](https://github.com/STRML/react-resizable)中文文档
+# [re-resizable](https://github.com/STRML/re-resizable)中文文档
 
 ## 示例 Gif
 

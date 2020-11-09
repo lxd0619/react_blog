@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 
 export class FrontEnd extends Component {
@@ -20,14 +21,30 @@ export class FrontEnd extends Component {
     console.log("res", res);
 
     let list = [];
-    context.keys().map((item) =>
+    let lists = [];
+    context.keys().map((item) => {
+      // console.log("item", item);
+      console.log("item", item.split(".")[1].split("/"));
+
+      let arr = item.split(".")[1].split("/");
+      lists.push({ ...arr.slice(1, arr.length) });
+
       list.push({
         title: item.split(".")[1].split("/").slice(-1),
         path: context(item),
-      })
-    );
+      });
+    });
+    console.log(lists);
     this.setState({ data: list });
   }
+
+  loop = (data) => {
+    data &&
+      data.map((item, index) => {
+        console.log(Object.keys(item), index);
+      });
+    // return list;
+  };
 
   render() {
     const { data } = this.state;
