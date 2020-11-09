@@ -24,9 +24,10 @@ export class FrontEnd extends Component {
     let lists = [];
     context.keys().map((item) => {
       // console.log("item", item);
-      console.log("item", item.split(".")[1].split("/"));
+      // console.log("item", item.split(".")[1].split("/"));
 
       let arr = item.split(".")[1].split("/");
+      console.log(arr.slice(1, arr.length));
       lists.push({ ...arr.slice(1, arr.length) });
 
       list.push({
@@ -39,9 +40,11 @@ export class FrontEnd extends Component {
   }
 
   loop = (data) => {
+    let list = [];
     data &&
       data.map((item, index) => {
-        console.log(Object.keys(item), index);
+        // console.log(Object.keys(item), index);
+        list.push({ title: item, children: [] });
       });
     // return list;
   };
