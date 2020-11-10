@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { Component } from "react";
 import { Tree } from "antd";
-const { DirectoryTree } = Tree;
 
 export class FrontEnd extends Component {
   state = {
@@ -84,12 +83,12 @@ export class FrontEnd extends Component {
   };
 
   render() {
-    const { list, treeData } = this.state;
+    const { treeData } = this.state;
 
     return (
       <div>
+        {}
         <Tree
-          defaultExpandAll={true}
           onSelect={this.onSelect}
           onExpand={this.onExpand}
           treeData={treeData}
