@@ -41,8 +41,16 @@ export class Home extends Component {
   render() {
     return (
       <>
-        <div>Home</div>
-        <Resizable />
+        <Resizable>
+          <ul>
+            <li>aaaaaaaaaaaaaaaaaaaaa</li>
+            <li>aaaaaaaaaaaaaaaaaaaaa</li>
+            <li>aaaaaaaaaaaaaaaaaaaaa</li>
+            <li>aaaaaaaaaaaaaaaaaaaaa</li>
+            <li>aaaaaaaaaaaaaaaaaaaaa</li>
+            <li>aaaaaaaaaaaaaaaaaaaaa</li>
+          </ul>
+        </Resizable>
       </>
     );
   }
