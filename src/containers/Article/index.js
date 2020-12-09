@@ -21,7 +21,7 @@ export class Articles extends Component {
   render() {
     const { markdown } = this.state;
     return (
-      <div>
+      <div style={{ margin: "50px" }}>
         <Card bordered={false}>
           <ReactMarkdown
             className="markdown-body"

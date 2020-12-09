@@ -18,6 +18,7 @@ const Frontend = lazy(() =>
 const Backend = lazy(() =>
   import(/* webpackChunkName: "Backend" */ "./Back_end")
 );
+const Notes = lazy(() => import(/* webpackChunkName: "Notes" */ "./Notes"));
 const Edit = lazy(() => import(/* webpackChunkName: "Edit" */ "./Edit"));
 const Main = lazy(() => import(/* webpackChunkName: "Main" */ "./Main"));
 
@@ -33,6 +34,7 @@ class AppRouter extends React.Component {
             <Route path="/article" component={Article} exact />
             <Route path="/frontend" component={Frontend} exact />
             <Route path="/backend" component={Backend} exact />
+            <Route path="/notes" component={Notes} exact />
             <Route path="/edit" component={Edit} exact />
             <PrivateRoute path={`/`} component={Main} />
           </Switch>

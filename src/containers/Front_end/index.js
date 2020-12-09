@@ -87,7 +87,6 @@ export class FrontEnd extends Component {
 
     return (
       <div>
-        {}
         <Tree
           onSelect={this.onSelect}
           onExpand={this.onExpand}
