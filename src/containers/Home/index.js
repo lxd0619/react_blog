@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import Resizable from "Components/Resizable";
 import { List, Typography, Divider, Layout, Row, Col } from "antd";
