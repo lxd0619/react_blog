@@ -18,7 +18,7 @@ export class Home extends Component {
     //context 关闭递归查找recursive 会变成 sync
     // console.log("arr", context.resolve(arr[0]));
     //第一个js文件的相对路径./js/b.js
-    console.log("keys()", context.keys());
+    // console.log("keys()", context.keys());
     //所有成功匹配的js文件数组["./a.js", "./index.js", "./reducer/c.js", "./reducer/d.js"]
     const res = context.keys().map(context);
     // console.log("res", res);
@@ -62,10 +62,9 @@ export class Home extends Component {
                     <li
                       key={index}
                       onClick={() =>
-                        this.props.history.push({
-                          pathname: "/article",
-                          query: { path: item.path },
-                        })
+                        this.props.history.push(
+                          `/article?path=${escape(item.path)}`
+                        )
                       }
                     >
                       {item.title}
