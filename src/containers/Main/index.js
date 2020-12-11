@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { Suspense, lazy } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import Drawer from "./components/Drawer";
 import Loading from "Components/Loading";
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ "../Home"));
@@ -21,6 +22,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+        <Drawer />
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route path="/" component={Home} exact />

@@ -12,6 +12,7 @@
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "antd": "^4.5.4",
+    "antd-theme-generator": "^1.2.8",
     "axios": "^0.21.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "^24.9.0",
@@ -77,9 +78,9 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "start": "node color && node scripts/start.js",
+    "build": "node color && node scripts/build.js",
+    "test": " node color && node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import reactCSS from "reactcss";
 import { ChromePicker } from "react-color";
@@ -13,6 +14,21 @@ class Palette extends React.Component {
     },
   };
 
+  getTheme = () => {
+    console.log(this.state.color);
+    window.less
+      .modifyVars({
+        "@primary-color": this.state.color,
+        "@layout-header-padding": "0px",
+      })
+      .then(() => {
+        // this.setState({ style: data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker });
   };
@@ -22,7 +38,10 @@ class Palette extends React.Component {
   };
 
   handleChange = (color) => {
-    this.setState({ color: color.rgb });
+    console.log("color", color);
+    this.setState({ color: color.hex }, () => {
+      this.getTheme();
+    });
   };
 
   render() {

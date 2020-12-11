@@ -43,7 +43,7 @@ export class Home extends Component {
 
     return (
       <>
-        <Layout style={{ background: "#fff" }}>
+        <Layout>
           <Sider className={Style.sider}>
             <div className={Style.left}>
               <ul>
