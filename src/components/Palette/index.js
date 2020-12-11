@@ -38,20 +38,21 @@ class Palette extends React.Component {
   };
 
   handleChange = (color) => {
-    console.log("color", color);
     this.setState({ color: color.hex }, () => {
       this.getTheme();
     });
   };
 
   render() {
+    const { displayColorPicker, color } = this.state;
     const styles = reactCSS({
       default: {
         color: {
           width: "36px",
           height: "14px",
           borderRadius: "2px",
-          background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
+          // background: `rgba(${this.state.color.r}, ${this.state.color.g}, ${this.state.color.b}, ${this.state.color.a})`,
+          background: color,
         },
         swatch: {
           padding: "5px",
@@ -80,13 +81,10 @@ class Palette extends React.Component {
         <div style={styles.swatch} onClick={this.handleClick}>
           <div style={styles.color} />
         </div>
-        {this.state.displayColorPicker ? (
+        {displayColorPicker ? (
           <div style={styles.popover}>
             <div style={styles.cover} onClick={this.handleClose} />
-            <ChromePicker
-              color={this.state.color}
-              onChange={this.handleChange}
-            />
+            <ChromePicker color={color} onChange={this.handleChange} />
           </div>
         ) : null}
       </div>

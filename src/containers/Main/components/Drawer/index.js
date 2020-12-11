@@ -20,6 +20,7 @@ const Sider = () => {
     right: "1rem",
     top: "1rem",
     fontSize: "2rem",
+    zIndex: 999,
   };
   return (
     <>

@@ -43,7 +43,38 @@ export class Home extends Component {
 
     return (
       <>
-        <Layout>
+        <Row>
+          <Col span={6}>
+            <div className={Style.left}>
+              <ul>
+                <li onClick={() => this.fnGo("")}>首页</li>
+                <li onClick={() => this.fnGo("frontend")}>前端</li>
+                <li onClick={() => this.fnGo("backend")}>后端</li>
+                <li onClick={() => this.fnGo("Notes")}>Notes</li>
+              </ul>
+            </div>
+          </Col>
+          <Col span={18}>
+            <ul className={Style.list}>
+              {list &&
+                list.map((item, index) => {
+                  return (
+                    <li
+                      key={index}
+                      onClick={() =>
+                        this.props.history.push(
+                          `/article?path=${escape(item.path)}`
+                        )
+                      }
+                    >
+                      {item.title}
+                    </li>
+                  );
+                })}
+            </ul>
+          </Col>
+        </Row>
+        {/* <Layout>
           <Sider className={Style.sider}>
             <div className={Style.left}>
               <ul>
@@ -73,7 +104,7 @@ export class Home extends Component {
                 })}
             </ul>
           </Content>
-        </Layout>
+        </Layout> */}
       </>
     );
   }
