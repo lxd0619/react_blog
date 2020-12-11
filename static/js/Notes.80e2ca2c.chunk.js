@@ -1,0 +1,2 @@
+(this.webpackJsonpblog=this.webpackJsonpblog||[]).push([[7],{583:function(e,t,n){"use strict";n.r(t);var c=n(263),a=n(0),l=n.n(a);t.default=function(){var e=Object(a.useState)(0),t=Object(c.a)(e,2),n=t[0],u=t[1];return l.a.createElement("div",null,l.a.createElement("p",null,"You clicked ",n," times"),l.a.createElement("button",{onClick:function(){return u(n+1)}},"Click me"))}}}]);
+//# sourceMappingURL=Notes.80e2ca2c.chunk.js.map
