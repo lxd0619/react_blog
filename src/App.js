@@ -10,11 +10,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Main />
-      </div>
-    );
+    return <Main />;
   }
 }
 

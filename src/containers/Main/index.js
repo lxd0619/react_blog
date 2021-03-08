@@ -21,7 +21,7 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <Drawer />
         <Suspense fallback={<Loading />}>
           <Switch>
@@ -33,7 +33,7 @@ class Main extends React.Component {
             <Route path="/edit" component={Edit} exact />
           </Switch>
         </Suspense>
-      </div>
+      </>
     );
   }
 }

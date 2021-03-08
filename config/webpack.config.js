@@ -302,12 +302,13 @@ module.exports = function (webpackEnv) {
         // "@": paths.appSrc,
         "@": path.resolve(__dirname, "../src/"),
         Config: path.resolve(__dirname, "../config/"),
+        PersonConfig: path.resolve(__dirname, "../config/personConfig"),
         Containers: path.resolve(__dirname, "../src/containers/"),
         Components: path.resolve(__dirname, "../src/components/"),
         // Contexts: path.resolve(__dirname, "../src/contexts/"),
         Styles: path.resolve(__dirname, "../src/styles/"),
         Utils: path.resolve(__dirname, "../src/utils/"),
-        Image: path.resolve(__dirname, "../src/static/images/"),
+        Images: path.resolve(__dirname, "../src/static/images/"),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

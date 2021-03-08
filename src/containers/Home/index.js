@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Resizable from "Components/Resizable";
 import { List, Typography, Divider, Layout, Row, Col } from "antd";
 import Style from "./style.module.scss";
+import bgPic from "Images/bgPic.jpg";
+import { HeadPic } from "PersonConfig";
 const { Header, Footer, Sider, Content } = Layout;
 export class Home extends Component {
   state = {};
@@ -43,18 +45,19 @@ export class Home extends Component {
 
     return (
       <>
-        <Row>
-          <Col span={6}>
+        <Row className={Style.container}>
+          <Col span={10} style={{ background: `url(${bgPic}) center center` }}>
             <div className={Style.left}>
+              <img src={HeadPic} />
               <ul>
                 <li onClick={() => this.fnGo("")}>首页</li>
                 <li onClick={() => this.fnGo("frontend")}>前端</li>
-                <li onClick={() => this.fnGo("backend")}>后端</li>
+                {/* <li onClick={() => this.fnGo("backend")}>后端</li> */}
                 <li onClick={() => this.fnGo("Notes")}>Notes</li>
               </ul>
             </div>
           </Col>
-          <Col span={18}>
+          <Col span={14}>
             <ul className={Style.list}>
               {list &&
                 list.map((item, index) => {
