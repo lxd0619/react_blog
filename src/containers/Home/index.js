@@ -3,8 +3,9 @@ import React, { Component } from "react";
 import Resizable from "Components/Resizable";
 import { List, Typography, Divider, Layout, Row, Col } from "antd";
 import Style from "./style.module.scss";
-import bgPic from "Images/bgPic.jpg";
-import { HeadPic } from "PersonConfig";
+import bgPic from "Images/bg.jpg";
+import Config from "PersonConfig";
+
 const { Header, Footer, Sider, Content } = Layout;
 export class Home extends Component {
   state = {};
@@ -46,9 +47,19 @@ export class Home extends Component {
     return (
       <>
         <Row className={Style.container}>
-          <Col span={10} style={{ background: `url(${bgPic}) center center` }}>
+          <Col
+            span={10}
+            style={{
+              background: `url(${bgPic}) center center no-repeat`,
+              backgroundSize: "cover",
+            }}
+            className={Style.bgPic}
+          >
             <div className={Style.left}>
-              <img src={HeadPic} />
+              {/* <img className={Style.headPic} src={Config.headPic} /> */}
+              <div className={Style.nickName}>
+                <span>Hello World</span>
+              </div>
               <ul>
                 <li onClick={() => this.fnGo("")}>首页</li>
                 <li onClick={() => this.fnGo("frontend")}>前端</li>

@@ -5,17 +5,36 @@
   top: 0;
   left: 0;
   .left {
+    width: 200px;
+    height: 100px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
+    background: rgba($color: #fff, $alpha: 0.7);
+    .headPic {
+      width: 80px;
+      height: 80px;
+    }
+    .nickName {
+      width: 100%;
+      line-height: 50px;
+      text-align: center;
+      font-size: 20px;
+      background: transparent;
+    }
     ul {
       list-style: none;
+      color: #424344;
       li {
         display: inline-block;
-        margin: 20px;
+        // margin: 20px;
         cursor: pointer;
+
+        &:not(:last-child)::after {
+          content: "/";
+          padding: 0 5px;
+        }
       }
     }
   }

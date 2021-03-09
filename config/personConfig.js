@@ -1,10 +1,12 @@
 /**
  * config
  */
-const config = {};
+const config = {
+  headPic: require("Images/cat.jpeg"),
+};
 
-// import HeadPic from "Images/cat.jpeg";
-const HeadPic = "Images/cat.jpeg";
+// 头像
+const HeadPic = require("Images/cat.jpeg");
 
 export { HeadPic };
 
