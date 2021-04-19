@@ -16,7 +16,7 @@ import { AppContainer, setConfig } from "react-hot-loader";
 // });
 
 import VConsole from "vconsole";
-let vConsole = new VConsole();
+new VConsole();
 
 // 禁用警告
 setConfig({
