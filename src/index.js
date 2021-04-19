@@ -15,8 +15,8 @@ import { AppContainer, setConfig } from "react-hot-loader";
 //   autoScale: true,
 // });
 
-// import VConsole from "vconsole";
-// let vConsole = new VConsole();
+import VConsole from "vconsole";
+let vConsole = new VConsole();
 
 // 禁用警告
 setConfig({
